@@ -1,0 +1,15 @@
+admin
+1337
+gordonb
+pablo
+smithy
+administrator
+root
+user
+guest
+test
+support
+info
+webmaster
+admin1
+superuser

@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: python_app
+    volumes:
+      - .:/app
+    networks:
+      - monitor_network
+    tty: true  # Mantiene el contenedor activo para que puedas ingresar manualmente
+
+  dvwa:
+    image: vulnerables/web-dvwa
+    container_name: dvwa
+    ports:
+      - "8080:80"  # Expone el puerto 80 de DVWA en el puerto 8080 del host
+    networks:
+      - monitor_network
+
+networks:
+  monitor_network:
+    driver: bridge
